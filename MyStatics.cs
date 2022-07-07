@@ -12,16 +12,17 @@ namespace StaticOrNot
         public MyStatics()
         {
             Incrementing();
-            Id = LuckyNumber;
+            Id = _currentIndex;
+            
         }
-        public static int LuckyNumber { get; set; } = 0;
-        public string Name { get; set; }
+        private static int _currentIndex  = 0;  //'_currentIndex' är synlig endast i klassen med 'private'
+        public string Name { get; set; }        //'Name' nårbar utifrån klassen med 'public'
 
-        public int Id { get; set; }
+        public int Id { get; private set; }     //Förhindra att någon kan förändra Id med 'private set'
 
         public void Incrementing()
         {
-            LuckyNumber++;
+            _currentIndex++;
         }
     }
 }

@@ -4,29 +4,14 @@
 
 using StaticOrNot;
 
-//Random rnd = new Random();
-//for (int i = 0; i < 5; i++)
-//{
-//MyStatics.LuckyNumber = rnd.Next(1, 101);
-//Console.WriteLine(MyStatics.LuckyNumber);
-
-//}
 
 //Att använda en non-static metod kräver instansiering
-MyStatics instans = new MyStatics();
-instans.Name = "Object 1";
-//int startValue = 0;
-//MyStatics.LuckyNumber = startValue;
-//for (int i = 0; i < 5; i++)
-//{
-//    instans.Incrementing();
-//    Console.Write(MyStatics.LuckyNumber + ", ");
-//}
+MyStatics instans = new MyStatics { Name = "Object 1" };
+MyStatics instans2 = new MyStatics { Name = "Object 2" };
+MyStatics instans3 = new MyStatics { Name = "Object 3" };
 
-MyStatics instans2 = new MyStatics();
-instans2.Name = "Object 2";
-//Console.WriteLine(MyStatics.LuckyNumber);
 
-//Skriv ut de 2 objektens innehåll
-Console.WriteLine($"Id: {instans.Id}, Name: {instans.Name} , LuckyNumber value: {MyStatics.LuckyNumber}");
-Console.WriteLine($"Id: {instans2.Id}, Name: {instans2.Name} , LuckyNumber value: {MyStatics.LuckyNumber}");
+//Skriv ut objektens innehåll
+Console.WriteLine($"Id: {instans.Id}, Name: {instans.Name}");
+Console.WriteLine($"Id: {instans2.Id}, Name: {instans2.Name}");
+Console.WriteLine($"Id: {instans3.Id}, Name: {instans3.Name}");
