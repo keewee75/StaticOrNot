@@ -47,5 +47,11 @@ namespace StaticOrNot
             DateTime currentDate = DateTime.Now;
             return currentDate;
         }
+
+        public override string ToString() //Overridar inbyggda ToString
+        {
+            //string nameAndAge = "Name: " + Name + " Age: " + Age;
+            return "Id: " + Id + " Name: " + Name + " Age: " + Age;
+        }
     }
 }
