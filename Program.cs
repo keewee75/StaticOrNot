@@ -9,13 +9,13 @@ using StaticOrNot;
 MyStatics instans = new MyStatics { Name = "Object 1" };
 MyStatics instans2 = new MyStatics { Name = "Object 2" };
 MyStatics instans3 = new MyStatics { Name = "Object 3" };
-MyStatics instans4 = new MyStatics("ObjectWithConstructor");
+MyStatics instans4 = new MyStatics("ObjectWithConstructor", 47);
 
 
 //Skriv ut objektens innehåll
-Console.WriteLine($"Id: {instans.Id}, Name: {instans.Name}");
-Console.WriteLine($"Id: {instans2.Id}, Name: {instans2.Name}");
-Console.WriteLine($"Id: {instans3.Id}, Name: {instans3.Name}");
-Console.WriteLine($"Id: {instans4.Id}, Name: {instans4.Name}");
+Console.WriteLine($"Id: {instans.Id}, Name: {instans.Name}, Age: { instans.Age}");
+Console.WriteLine($"Id: {instans2.Id}, Name: {instans2.Name}, Age: {instans2.Age}");
+Console.WriteLine($"Id: {instans3.Id}, Name: {instans3.Name}, Age: {instans3.Age}");
+Console.WriteLine($"Id: {instans4.Id}, Name: {instans4.Name}, Age: {instans4.Age}");
 
 Console.WriteLine($"\nCurrent Date & Time: {MyStatics.CurrentDate()}");

@@ -15,10 +15,23 @@ namespace StaticOrNot
             Id = _currentIndex;           
         }
 
-        public MyStatics(string name)
+        public MyStatics(string name, int age) :this() // 'this' pekar på den parameterlösa konstruktorn som körs först innan denna konstruktor körs
         {
+            //Incrementing();
+            //Id = _currentIndex;
             Name = name;
+            Age = age;
         }
+
+        //private int myVar;
+
+        //public int MyProperty
+        //{
+        //    get { return myVar; }
+        //    set { myVar = value; }
+        //}
+
+        public int Age { get; set; }
 
         private static int _currentIndex  = 0;  //'_currentIndex' är synlig endast i klassen med 'private'
         public string Name { get; set; }        //'Name' nårbar utifrån klassen med 'public'
