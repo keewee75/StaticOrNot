@@ -12,17 +12,21 @@ namespace StaticOrNot
         public MyStatics()
         {
             Incrementing();
-            Id = _currentIndex;
-            
+            Id = _currentIndex;           
         }
         private static int _currentIndex  = 0;  //'_currentIndex' är synlig endast i klassen med 'private'
         public string Name { get; set; }        //'Name' nårbar utifrån klassen med 'public'
-
         public int Id { get; private set; }     //Förhindra att någon kan förändra Id med 'private set'
 
-        public void Incrementing()
+        private void Incrementing()             //Denna
         {
             _currentIndex++;
+        }
+
+        public static DateTime CurrentDate()
+        {
+            DateTime currentDate = DateTime.Now;
+            return currentDate;
         }
     }
 }

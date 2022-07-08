@@ -15,3 +15,6 @@ MyStatics instans3 = new MyStatics { Name = "Object 3" };
 Console.WriteLine($"Id: {instans.Id}, Name: {instans.Name}");
 Console.WriteLine($"Id: {instans2.Id}, Name: {instans2.Name}");
 Console.WriteLine($"Id: {instans3.Id}, Name: {instans3.Name}");
+
+
+Console.WriteLine($"\nCurrent Date & Time: {MyStatics.CurrentDate()}");
