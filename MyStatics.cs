@@ -14,6 +14,12 @@ namespace StaticOrNot
             Incrementing();
             Id = _currentIndex;           
         }
+
+        public MyStatics(string name)
+        {
+            Name = name;
+        }
+
         private static int _currentIndex  = 0;  //'_currentIndex' är synlig endast i klassen med 'private'
         public string Name { get; set; }        //'Name' nårbar utifrån klassen med 'public'
         public int Id { get; private set; }     //Förhindra att någon kan förändra Id med 'private set'
