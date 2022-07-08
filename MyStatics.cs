@@ -18,7 +18,7 @@ namespace StaticOrNot
         public string Name { get; set; }        //'Name' nårbar utifrån klassen med 'public'
         public int Id { get; private set; }     //Förhindra att någon kan förändra Id med 'private set'
 
-        private void Incrementing()             //Denna
+        private void Incrementing()             //Denna körs bara i klassen
         {
             _currentIndex++;
         }
