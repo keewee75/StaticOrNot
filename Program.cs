@@ -1,27 +1,28 @@
 ﻿//1. Skapa en klass som ska innehålla static av något slag
 //2. Skapa en static property i den klassen
 //3. Använd propertyn
+//4. Skapa en metod med return
 
 using StaticOrNot;
 
-
-//Att använda en non-static metod kräver instansiering
-MyStatics instans = new MyStatics { Name = "Object 1", Age = 40 };
-MyStatics instans2 = new MyStatics { Name = "Object 2" };
-MyStatics instans3 = new MyStatics { Name = "Object 3" };
-MyStatics instans4 = new MyStatics("ObjectWithConstructor", 47);
+//Anropa metoden CurrentDate från klassen MyStatics och skriv ut.(Då CurrentDate är static så behöver vi inte skapa ett objekt av MyStatics)
+Console.WriteLine($"\nCurrent Date & Time: {MyStatics.CurrentDate()}");
 
 
-//Skriv ut objektens innehåll
-Console.WriteLine($"Id: {instans.Id} Name: {instans.Name}, Age: { instans.Age}");
-Console.WriteLine($"Id: {instans2.Id} Name: {instans2.Name}, Age: {instans2.Age}");
-Console.WriteLine($"Id: {instans3.Id} Name: {instans3.Name}, Age: {instans3.Age}");
-Console.WriteLine($"Id: {instans4.Id} Name: {instans4.Name}, Age: {instans4.Age}");
+//Att använda en non-static metod kräver instansiering //Sätter Name och Age mha den andra konstruktorn i MyStatics
+MyStatics instans1 = new MyStatics("Olle", 35);
+MyStatics instans2 = new MyStatics("Bengt", 15);
+MyStatics instans3 = new MyStatics("Kalle", 41);
+MyStatics instans4 = new MyStatics("Karin", 47);
+MyStatics instans5 = new MyStatics("Emma", 17);
 
-Console.WriteLine(instans);
+
+//Skriv ut objektens innehåll (ToString overridas i MyStatics)
+Console.WriteLine(instans1);
 Console.WriteLine(instans2);
 Console.WriteLine(instans3);
 Console.WriteLine(instans4);
+Console.WriteLine(instans5);
 
-Console.WriteLine($"\nCurrent Date & Time: {MyStatics.CurrentDate()}");
-
+instans5.HappyBirthDay();
+Console.WriteLine(instans5);

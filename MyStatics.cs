@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StaticOrNot
 {
-    internal class MyStatics
+    public class MyStatics
     {
         //Skapa unika Idn med hjälp av konstruktorn
         public MyStatics()
@@ -23,26 +23,24 @@ namespace StaticOrNot
             Age = age;
         }
 
-        //private int myVar;
-
-        //public int MyProperty
-        //{
-        //    get { return myVar; }
-        //    set { myVar = value; }
-        //}
-
-        public int Age { get; set; }
+        public int Age { get; set; }            //'Age' nårbar utifrån klassen med 'public'
 
         private static int _currentIndex  = 0;  //'_currentIndex' är synlig endast i klassen med 'private'
         public string Name { get; set; }        //'Name' nårbar utifrån klassen med 'public'
-        public int Id { get; private set; }     //Förhindra att någon kan förändra Id med 'private set'
+        public int Id { get; private set; }     //'Id' Nårbar utifrån men förhindrar att någon kan förändra Id med 'private set'
 
-        private void Incrementing()             //Denna körs bara i klassen
+        private void Incrementing()             //Denna körs bara i klassen. Inkrementerar Id i detta fallet
         {
             _currentIndex++;
         }
 
-        public static DateTime CurrentDate()
+        public void HappyBirthDay() 
+        {
+            Age++;
+            Console.WriteLine($"Happy Birthday {Name}! You are now {Age} years old!");
+        }
+
+        public static DateTime CurrentDate()    //Kan anropas utan att skapa ett objekt av MyStatic klassen
         {
             DateTime currentDate = DateTime.Now;
             return currentDate;
@@ -50,8 +48,12 @@ namespace StaticOrNot
 
         public override string ToString() //Overridar inbyggda ToString
         {
-            //string nameAndAge = "Name: " + Name + " Age: " + Age;
             return "Id: " + Id + " Name: " + Name + " Age: " + Age;
+        }
+
+        public bool IsAdult()
+        {
+            return (Age >= 18) ? true : false;
         }
     }
 }
