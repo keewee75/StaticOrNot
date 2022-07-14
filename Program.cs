@@ -2,6 +2,7 @@
 //2. Skapa en static property i den klassen
 //3. Använd propertyn
 //4. Skapa en metod med return
+//5. Unit Testa metoden som skapdes i 4.
 
 using StaticOrNot;
 
