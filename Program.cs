@@ -6,17 +6,17 @@ using StaticOrNot;
 
 
 //Att använda en non-static metod kräver instansiering
-MyStatics instans = new MyStatics { Name = "Object 1", Age = 40 };
+MyStatics instans = new MyStatics { Name = "Object 1", Age = 40, BirthDay = new DateTime (1975, 01, 06) };
 MyStatics instans2 = new MyStatics { Name = "Object 2" };
 MyStatics instans3 = new MyStatics { Name = "Object 3" };
-MyStatics instans4 = new MyStatics("ObjectWithConstructor", 47);
+MyStatics instans4 = new MyStatics("ObjectWithConstructor", 47, new DateTime(1975, 01, 06));
 
 
 //Skriv ut objektens innehåll
-Console.WriteLine($"Id: {instans.Id} Name: {instans.Name}, Age: { instans.Age}");
-Console.WriteLine($"Id: {instans2.Id} Name: {instans2.Name}, Age: {instans2.Age}");
-Console.WriteLine($"Id: {instans3.Id} Name: {instans3.Name}, Age: {instans3.Age}");
-Console.WriteLine($"Id: {instans4.Id} Name: {instans4.Name}, Age: {instans4.Age}");
+//Console.WriteLine($"Id: {instans.Id} Name: {instans.Name}, Age: { instans.Age}");
+//Console.WriteLine($"Id: {instans2.Id} Name: {instans2.Name}, Age: {instans2.Age}");
+//Console.WriteLine($"Id: {instans3.Id} Name: {instans3.Name}, Age: {instans3.Age}");
+//Console.WriteLine($"Id: {instans4.Id} Name: {instans4.Name}, Age: {instans4.Age}");
 
 Console.WriteLine(instans);
 Console.WriteLine(instans2);
